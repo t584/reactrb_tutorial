@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: reactrb_app_dev
+  pool: 5
+  username: ts
+  password:
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: cr8_fins_v2_test
+#   pool: 5
+#   username: ts
+#   password:
