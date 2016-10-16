@@ -31,6 +31,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem "reactrb-rails-generator"
+gem 'reactrb'
+gem 'react-rails', '>= 1.3.0'
+gem 'opal-rails', '>= 0.8.1'
+gem 'therubyracer', platforms: :ruby
+gem 'react-router-rails', '~> 0.13.3'
+gem 'reactrb-router'
+gem 'reactive-record', '>= 0.8.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'             # Causes rails console to open pry
