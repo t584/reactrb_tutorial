@@ -1,6 +1,6 @@
 # module Home
 class Clock < React::Component::Base
-  param initial_mode: 12
+  param :initial_mode, default: 24
 
   before_mount do
     state.mode! params.initial_mode
@@ -31,7 +31,3 @@ class Clock < React::Component::Base
     end
   end
 end
-
-# Element['#container'].render do
-#   Clock(initial_mode: 12)
-# end

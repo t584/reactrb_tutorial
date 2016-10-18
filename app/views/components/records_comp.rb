@@ -17,13 +17,14 @@ class RecordsComp < React::Component::Base
             th { 'Title' }
             th { 'Amount' }
           }
+          tbody {
+            'Table Body'
+          #   # state.records.each do |record|
+          #   #   RecordComp(key: record.id, record: record)
+          #   # end
+          }
         }
-        tbody {
-          'Table Body'
-        #   # state.records.each do |record|
-        #   #   RecordComp(key: record.id, record: record)
-        #   # end
-        }
+
       }
     }
   end

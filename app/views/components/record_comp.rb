@@ -1,9 +1,18 @@
 class RecordComp < React::Component::Base
+  # param :records, default: []
+
+  # before_mount do
+  #   state.records! params.data
+  # end
+
   render do
-    tr {
-      td { params.record.date }
-      td { params.record.title }
-      td { params.record.amount } }
+    div { 'RecordComp here' }
+    # div { params.record.title }
+
+    # tr {
+    #   td { params.record.date }
+    #   td { params.record.title }
+    #   td { params.record.amount } }
   end
 
   # def amount_format(amount) do
