@@ -40,6 +40,8 @@ gem 'react-router-rails', '~> 0.13.3'
 gem 'reactrb-router'
 gem 'reactive-record', '>= 0.8.0'
 
+gem 'react-bootstrap-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'             # Causes rails console to open pry

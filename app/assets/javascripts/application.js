@@ -16,4 +16,5 @@
 //= require jquery_ujs
 Opal.load('components');
 //= require turbolinks
+//= require react_bootstrap
 //= require_tree .

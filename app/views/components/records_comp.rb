@@ -1,31 +1,50 @@
 class RecordsComp < React::Component::Base
-  param :records, default: []
+  param :records, default: [], type: [Hash]
 
   before_mount do
-    state.records! params.data
+    state.records! params.records
   end
 
-  render do
-    div.records {
-      h2.title {
-        'Records Component'
-      }
-      table {
-        thead {
+  def render
+    div.records do
+      h2.title { 'Records' }
+      table do
+        thead do
           tr {
             th { 'Date' }
             th { 'Title' }
-            th { 'Amount' }
-          }
-          tbody {
-            'Table Body'
-          #   # state.records.each do |record|
-          #   #   RecordComp(key: record.id, record: record)
-          #   # end
-          }
-        }
-
-      }
-    }
+            th { 'Amount' } }
+        end
+        tbody do
+          state.records.each do |record|
+            RecordComp key: record[:id], record: record
+            # li(key: record[:id]) { record[:title] }
+          end
+        end
+      end
+    end
   end
 end
+
+
+
+
+#   render do
+#     div.records do
+#       h2.title { 'Records' }
+#       table do
+#         thead do
+#           tr {
+#             th { 'Date' }
+#             th { 'Title' }
+#             th { 'Amount' } }
+#         end
+#         tbody do
+#           state.records.each do |row|
+#             RecordComp, key: row[:id], record: row
+#           end
+#         end
+#       end
+#     end
+#   end
+# end

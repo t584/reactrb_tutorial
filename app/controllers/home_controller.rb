@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def avatar
-    render_component "Avatar"#, user_name: "pwh"
+    render_component "Avatar", user_name: "pwh"
   end
   def search_path
     render_component "Components::Home::SearchPath"
@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def record
-    # @records = Record.all
-    render_component "RecordComp"#, data: @records
+    @record = Record.all
+    render_component "RecordComp", record: @record
   end
 end

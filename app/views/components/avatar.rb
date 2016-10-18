@@ -1,8 +1,8 @@
 class Avatar < React::Component::Base
-  param :user_name, default: "Tony"
+  param :user_name#, default: "Tony"
   def render
     div do
-      ProfilePic1  user_name: params.user_name
+      ProfilePic1 user_name: params.user_name
       ProfileLink user_name: params.user_name
     end
   end
@@ -49,7 +49,7 @@ class ProfilePic4 < React::Component::Base
   param :user_name
   def render
     div do
-      div { "ProfilePic4 - #{params.user_name}" }
+      div { params.user_name }
       ProfilePic5  user_name: params.user_name
     end
   end

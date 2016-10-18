@@ -1,25 +1,18 @@
 class RecordComp < React::Component::Base
-  # param :records, default: []
+  param :record, type: Hash
 
-  # before_mount do
-  #   state.records! params.data
-  # end
-
-  render do
-    div { 'RecordComp here' }
-    # div { params.record.title }
-
-    # tr {
-    #   td { params.record.date }
-    #   td { params.record.title }
-    #   td { params.record.amount } }
+  def render
+    tr do
+      td { params.record[:date] }
+      td { params.record[:title] }
+      td { amount_format(params.record[:amount].to_s) }
+    end
   end
 
-  # def amount_format(amount) do
-  #   amount.to_f.round(2).to_s
-  # end
+  def amount_format(amount)
+    '$ ' + amount.to_f.round(2).to_s
+  end
 end
-
 
 
 # module Components
@@ -58,6 +51,18 @@ end
 #     def render
 #       div do
 #         "record"
+#       end
+#     end
+#   end
+# end
+#----------------------------------------------------
+# class RecordComp < React::Component::Base
+#   param :data, type: [Hash]
+#
+#   def render
+#     ol do
+#       params.data.each do |record|
+#         li(key: record[:id]) { record[:title] }
 #       end
 #     end
 #   end
