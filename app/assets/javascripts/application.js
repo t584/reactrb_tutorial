@@ -13,6 +13,7 @@
 //= require 'react_ujs'
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 Opal.load('components');
 //= require turbolinks

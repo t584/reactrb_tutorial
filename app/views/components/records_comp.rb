@@ -8,7 +8,7 @@ class RecordsComp < React::Component::Base
   def render
     div.records do
       h2.title { 'Records' }
-      table do
+      table.table.table_bordered do
         thead do
           tr {
             th { 'Date' }
