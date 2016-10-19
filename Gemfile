@@ -32,13 +32,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "reactrb-rails-generator"
-gem 'reactrb', '~> 0.8.8'
+gem 'reactrb', '~> 0.9.0'
 gem 'react-rails', '>= 1.3.0'
 gem 'opal-rails', '>= 0.8.1'
 gem 'therubyracer', platforms: :ruby
 gem 'react-router-rails', '~> 0.13.3'
 gem 'reactrb-router'
 gem 'reactive-record', '>= 0.8.0'
+gem 'opal-browser'
 
 gem 'bootstrap', '~> 4.0.0.alpha4'
 
