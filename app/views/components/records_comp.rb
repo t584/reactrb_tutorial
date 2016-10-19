@@ -25,26 +25,3 @@ class RecordsComp < React::Component::Base
     end
   end
 end
-
-
-
-
-#   render do
-#     div.records do
-#       h2.title { 'Records' }
-#       table do
-#         thead do
-#           tr {
-#             th { 'Date' }
-#             th { 'Title' }
-#             th { 'Amount' } }
-#         end
-#         tbody do
-#           state.records.each do |row|
-#             RecordComp, key: row[:id], record: row
-#           end
-#         end
-#       end
-#     end
-#   end
-# end

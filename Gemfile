@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "reactrb-rails-generator"
-gem 'reactrb'
+gem 'reactrb', '~> 0.8.8'
 gem 'react-rails', '>= 1.3.0'
 gem 'opal-rails', '>= 0.8.1'
 gem 'therubyracer', platforms: :ruby

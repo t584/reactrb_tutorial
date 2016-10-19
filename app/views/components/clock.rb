@@ -1,6 +1,7 @@
 # module Home
 class Clock < React::Component::Base
-  param :initial_mode, default: 24
+
+  param initial_mode: 12
 
   before_mount do
     state.mode! params.initial_mode
@@ -15,19 +16,20 @@ class Clock < React::Component::Base
   end
 
   FORMATS = {
-    12 => "%a, %e %b %Y %I:%M %p",
-    24 => "%a, %e %b %Y %H:%M"
-    }
+      12 => "%a, %e %b %Y %I:%M %p",
+      24 => "%a, %e %b %Y %H:%M"
+  }
 
-  render do
+  def render
     div(class: :time) do
       Time.now.strftime(FORMATS[state.mode]).span
-      select(style: {"margin-left" => 20}, value: state.mode)  do
+      select(style: {"marginLeft" => 20}, value: state.mode)  do
         option(value: 12) { "12 Hour Clock" }
         option(value: 24) { "24 Hour Clock" }
       end.on(:change) do |e|
-        state.mode!(e.target.value.to_i)
+        state.method_missing("mode!",(e.target.value.to_i))
       end
     end
   end
 end
+

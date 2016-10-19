@@ -55,15 +55,3 @@ end
 #     end
 #   end
 # end
-#----------------------------------------------------
-# class RecordComp < React::Component::Base
-#   param :data, type: [Hash]
-#
-#   def render
-#     ol do
-#       params.data.each do |record|
-#         li(key: record[:id]) { record[:title] }
-#       end
-#     end
-#   end
-# end
