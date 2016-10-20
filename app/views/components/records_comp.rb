@@ -5,21 +5,24 @@ class RecordsComp < React::Component::Base
     state.records! params.records
   end
 
-  def render
-    div.records do
-      h2.title { 'Records' }
-      table.table.table_bordered do
-        thead do
-          tr {
-            th { 'Date' }
-            th { 'Title' }
-            th { 'Amount' } }
-        end
-        tbody do
-          state.records.each do |record|
-            RecordComp key: record[:id], record: record
-            # li(key: record[:id]) { record[:title] }
-          end
+  def add_record
+
+  end
+
+  render(:div, class: 'records') do
+    h2.title { 'Records - Airpair Tutorial' }
+    RecordFormComp()
+    table.table.table_bordered do
+      thead do
+        tr {
+          th { 'Date' }
+          th { 'Title' }
+          th { 'Amount' } }
+      end
+      tbody do
+        state.records.each do |record|
+          RecordComp key: record[:id], record: record
+          # li(key: record[:id]) { record[:title] }
         end
       end
     end

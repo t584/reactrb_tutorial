@@ -56,8 +56,7 @@ class ProfilePic4 < React::Component::Base
 end
 
 class ProfilePic5 < React::Component::Base
-  param :user_name
   def render
-    div { "ProfilePic5 - #{params.user_name}" }
+    div { 'ProfilePic5' }
   end
 end
