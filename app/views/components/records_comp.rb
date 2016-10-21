@@ -2,18 +2,13 @@ class RecordsComp < React::Component::Base
   param :records, default: [], type: [Hash]
 
   before_mount do
-    state.records! params.records
-  end
-
-  def add_record(record)
-    records = state.records
-    records << record
-    state.records! records
+    state.records! Record.all
   end
 
   render(:div, class: 'records') do
     h2.title { 'Records - Airpair Tutorial' }
     RecordFormComp()
+    hr { nil }
     table.table.table_bordered do
       thead do
         tr {

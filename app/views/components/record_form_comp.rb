@@ -1,5 +1,4 @@
 class RecordFormComp < React::Component::Base
-
   before_mount do
     state.title! ''
     state.date! ''
@@ -10,18 +9,7 @@ class RecordFormComp < React::Component::Base
     state.title.empty? || state.date.empty? || state.amount.empty?
   end
 
-  def handle_change
-    'blah'
-    # name = e.target.name
-    # state.method_missing("#{ name }",e.target.value)
-  end
-
-  def handle_submit(e)
-
-  end
-
   def render
-    # div { '--> RecordFormComp <--' }
     form.form_inline do
       div.form_group {
         input(type: 'text',
@@ -47,12 +35,24 @@ class RecordFormComp < React::Component::Base
       button(type: 'submit',
              class: 'btn btn-primary',
              disabled: invalid_input) do
-              'Create record'
-             end
-    end.on(:submit) do |e|
-      e.prevent_default
-      state.record.save
+               'Create record'
+             end.on(:click) { save_new_record }
+
+               # e.prevent_default
+               # save_new_record
+               # record = Record.create(title: 'Success')
+               # before_mount
+             # end
     end
+  end
+
+  def save_new_record
+    # alert 'here I am!!!'
+    record = Record.new(title: state.title, date: state.date, amount: state.amount)
+    record.save do |result|
+      alert 'unable to save' unless result
+    end
+    before_mount
   end
 end
 
@@ -65,57 +65,3 @@ end
 #       state.record.save
 #     end
 # end
-
-
-# class RecordFormComp < React::Component::Base
-#   param :title
-#   param :date
-#   param :amount
-#
-#   before_mount do
-#     state.title! ''
-#     state.date! ''
-#     state.amount! ''
-#   end
-#
-#   render(:form, class: 'form_inline') do
-#     div.form_group do
-#       input.form_control do
-#         type: 'text'
-#         placeholder: 'Date'
-#         name: 'date'
-#         value: state.date
-#         on(:change) { handle_change }
-#       button.btn.btn_primary do
-#
-#       end
-#
-#       end
-#     end
-#   end
-#
-#   def handle_change do
-#     on(:change) do |e|
-#       name = e.target.name
-#       instance_variable_set("state.#{name}", e.target.value)
-#     end
-#   end
-#
-# end
-
-
-# app/assets/javascripts/components/record_form.js.coffee
-
-# @RecordForm = React.createClass
-# ...
-#     handleSubmit: (e) ->
-#     e.preventDefault()
-# $.post '', { record: @state }, (data) =>
-#     @props.handleNewRecord data
-# @setState @getInitialState()
-# , 'JSON'
-#
-# render: ->
-# React.DOM.form
-# className: 'form-inline'
-# onSubmit: @handleSubmit
