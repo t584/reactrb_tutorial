@@ -6,7 +6,8 @@ class RecordsComp < React::Component::Base
   end
 
   def add_record
-
+    records = state.records.slice
+    records.push record
   end
 
   render(:div, class: 'records') do

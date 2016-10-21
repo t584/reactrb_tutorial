@@ -5,13 +5,14 @@ class RecordFormComp < React::Component::Base
     state.amount! ''
   end
 
-  def valid
-    state.title && state.date && state.amount
+  def invalid_input
+    state.title.empty? || state.date.empty? || state.amount.empty?
   end
 
-  def handle_change(e)
-    name = e.target.name
-    state.method_missing("#{ name }",e.target.value)
+  def handle_change
+    'blah'
+    # name = e.target.name
+    # state.method_missing("#{ name }",e.target.value)
   end
 
   def handle_submit(e)
@@ -20,39 +21,37 @@ class RecordFormComp < React::Component::Base
 
   def render
     # div { '--> RecordFormComp <--' }
-    form.form_inline {
+    form.form_inline do
       div.form_group {
-        input.form_control {
-          type = 'text'
-          placeholder= 'Date'
-          name = 'date'
-          value = state.date
-          # on(:change) {|e| }
-        } }
+        input(type: 'text',
+              class: 'form-control',
+              placeholder: 'Date',
+              name: 'date',
+              value: state.date).on(:change) { |e|
+                state.date! e.target.value } }
       div.form_group {
-        input.form_control {
-          type = 'text'
-          placeholder = 'Title'
-          name = 'title'
-          value = state.title
-          # on(:change) do |e|
-          #   state.date! e.target.value
-          # end
-        } }
+        input(type: 'text',
+              class: 'form-control',
+              placeholder: 'Title',
+              name: 'title',
+              value: state.title).on(:change) { |e|
+                state.title! e.target.value } }
       div.form_group {
-        input.form_control {
-          type = 'number'
-          placeholder = 'Amount'
-          name = 'amount'
-          value = state.amount
-          # on(:change) do |e|
-          #   state.date! e.target.value
-          # end
-        } }
-      button.btn.btn_primary {
-        type = 'submit'
-        disabled = !valid()
-        'Create record' } }
+        input(type: 'number',
+              class: 'form-control',
+              placeholder: 'Amount',
+              name: 'amount',
+              value: state.amount).on(:change) { |e|
+                state.amount! e.target.value } }
+      button(type: 'submit',
+             class: 'btn btn-primary',
+             disabled: invalid_input) do
+              'Create record'
+             end
+    end.on(:submit) do |e|
+      e.prevent_default
+      state.record.save
+    end
   end
 end
 
