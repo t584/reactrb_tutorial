@@ -5,9 +5,10 @@ class RecordsComp < React::Component::Base
     state.records! params.records
   end
 
-  def add_record
-    records = state.records.slice
-    records.push record
+  def add_record(record)
+    records = state.records
+    records << record
+    state.records! records
   end
 
   render(:div, class: 'records') do
@@ -23,7 +24,6 @@ class RecordsComp < React::Component::Base
       tbody do
         state.records.each do |record|
           RecordComp key: record[:id], record: record
-          # li(key: record[:id]) { record[:title] }
         end
       end
     end

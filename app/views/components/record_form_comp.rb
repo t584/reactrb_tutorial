@@ -1,4 +1,5 @@
 class RecordFormComp < React::Component::Base
+
   before_mount do
     state.title! ''
     state.date! ''
