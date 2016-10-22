@@ -41,6 +41,8 @@ gem 'reactrb-router'
 gem 'reactive-record', '>= 0.8.0'
 gem 'opal-browser'
 
+gem 'synchromesh', git: 'https://github.com/reactrb/synchromesh.git'
+
 gem 'bootstrap', '~> 4.0.0.alpha4'
 
 group :development, :test do
