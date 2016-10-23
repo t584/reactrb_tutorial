@@ -5,7 +5,7 @@ class RecordComp < React::Component::Base
     tr do
       td { params.record[:date] }
       td { params.record[:title] }
-      td { amount_format(params.record[:amount].to_s) }
+      td { amount_format(params.record[:amount]) }
     end
   end
 
