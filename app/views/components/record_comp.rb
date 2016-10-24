@@ -10,6 +10,6 @@ class RecordComp < React::Component::Base
   end
 
   def amount_format(amount)
-    '$ ' + amount.to_s.reverse.scan(/\d{1,3}/).join(",").reverse
+    '$ ' + amount.to_s.reverse.gsub(/...(?!-)(?=.)/,'\&,').reverse
   end
 end
