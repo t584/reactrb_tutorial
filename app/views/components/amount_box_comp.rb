@@ -12,6 +12,6 @@ class AmountBoxComp < React::Component::Base
   end
 
   def amount_format(amount)
-    '$ ' + amount.to_f.round(2).to_s
+    '$ ' + amount.to_s.reverse.scan(/\d{1,3}/).join(",").reverse
   end
 end
