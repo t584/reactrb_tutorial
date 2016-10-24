@@ -37,17 +37,10 @@ class RecordFormComp < React::Component::Base
              disabled: invalid_input) do
                'Create record'
              end.on(:click) { save_new_record }
-
-               # e.prevent_default
-               # save_new_record
-               # record = Record.create(title: 'Success')
-               # before_mount
-             # end
     end
   end
 
   def save_new_record
-    # alert 'here I am!!!'
     record = Record.new(title: state.title, date: state.date, amount: state.amount)
     record.save do |result|
       alert 'unable to save' unless result
@@ -55,13 +48,3 @@ class RecordFormComp < React::Component::Base
     before_mount
   end
 end
-
-
-
-# class RecordForm < React::Component::Base
-#   render(:form, class: 'form_inline') do
-#     end.on(:submit) do |e|
-#       e.prevent_default
-#       state.record.save
-#     end
-# end

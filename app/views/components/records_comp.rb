@@ -4,17 +4,13 @@ class RecordsComp < React::Component::Base
   end
 
   def credits
-    Record.all.where('amount > 0')
-          .map { |a| a[:amount].to_f }
-          .inject(0){|sum,x| sum + x}
-          .to_s
+    Record.all.where('amount > 0').map {|a| a[:amount].to_f}
+          .inject(0){|sum,x| sum + x}.to_s
   end
 
   def debits
-    Record.all.where('amount < 0')
-        .map { |a| a[:amount].to_f }
-        .inject(0){|sum,x| sum + x}
-        .to_s
+    Record.all.where('amount < 0').map {|a| a[:amount].to_f}
+          .inject(0){|sum,x| sum + x}.to_s
   end
 
   def balance
@@ -43,5 +39,6 @@ class RecordsComp < React::Component::Base
       end
     end
   end
-
 end
+
+# alert 'debug -> here I am!!!'

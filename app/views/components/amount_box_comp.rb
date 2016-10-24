@@ -5,10 +5,9 @@ class AmountBoxComp < React::Component::Base
 
   def render
     div.col_md_4 do
-      div.panel.panel_success do
-        div.panel_heading{ params.heading }
-        div.panel_body{ params.amount }
-      end
+      div(class: "panel panel-#{params.type}"){
+        div.panel_heading { params.heading }
+        div.panel_body { amount_format(params.amount) } }
     end
   end
 

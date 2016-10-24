@@ -43,7 +43,7 @@ gem 'opal-browser'
 
 gem 'synchromesh', git: 'https://github.com/reactrb/synchromesh.git'
 
-gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #Todo: -->
 gem 'react-bootstrap-rails', '~> 0.13.0'
 
