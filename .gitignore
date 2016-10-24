@@ -5,7 +5,8 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Tony Custom
-ts_notes
+/ts_notes
+/synchromesh-simple-poller-store
 
 # Created by https://www.gitignore.io/api/rails,rubymine
 
