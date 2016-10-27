@@ -1,5 +1,5 @@
 class RecordComp < React::Component::Base
-  param :key, type: String
+  #param :key, type: String key is reserved by react.js
   param :record, type: Record
 
   def handle_delete
@@ -10,9 +10,9 @@ class RecordComp < React::Component::Base
 
   def render
     tr do
-      td { params.record[:date] }
-      td { params.record[:title] }
-      td { amount_format(params.record[:amount]) }
+      td { params.record.date }
+      td { params.record.title }
+      td { amount_format(params.record.amount) }
       td { a.btn.btn_danger{'Delete'}.on(:click){ handle_delete } }
     end
   end
@@ -20,4 +20,5 @@ class RecordComp < React::Component::Base
   def amount_format(amount)
     '$ ' + amount.to_s.reverse.gsub(/...(?!-)(?=.)/,'\&,').reverse
   end
+  #hypertrace instrument: :all
 end

@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def record
-    @record = Record.all
-    render_component "RecordComp", record: @record
+    #@record = Record.all
+    render_component "RecordsComp" #, record: @record
   end
 end

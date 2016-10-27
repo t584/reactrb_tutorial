@@ -1,24 +1,13 @@
 class RecordsComp < React::Component::Base
-  def credits
-    Record.all.where('amount > 0').map {|a| a[:amount].to_f}
-          .inject(0){|sum,x| sum + x}.to_s
-  end
 
-  def debits
-    Record.all.where('amount < 0').map {|a| a[:amount].to_f}
-          .inject(0){|sum,x| sum + x}.to_s
-  end
-
-  def balance
-    (debits.to_f + credits.to_f).to_s
-  end
+  # moved the record computations (credit/debit/balance) to the model
 
   render(:div, class: "state.credits") do
     h2.title { 'Records' }
     div.row {
-      AmountBoxComp(type: 'success', amount: credits, heading: 'Credit')
-      AmountBoxComp(type: 'danger', amount: debits, heading: 'Debit')
-      AmountBoxComp(type: 'info', amount: balance, heading: 'Balance') }
+      AmountBoxComp(type: 'success', amount: Record.credit, heading: 'Credit')
+      AmountBoxComp(type: 'danger', amount: Record.debit, heading: 'Debit')
+      AmountBoxComp(type: 'info', amount: Record.balance, heading: 'Balance') }
     RecordFormComp()
     hr { nil }
     table.table.table_bordered do
@@ -27,12 +16,11 @@ class RecordsComp < React::Component::Base
                    th { 'Amount' }
                    th { 'Actions' } } }
       tbody do
-        Record.all.each do |record|
-          RecordComp key: record[:id], record: record
+        Record.each do |record|
+          RecordComp key: record.id, record: record
         end
       end
     end
   end
+  #hypertrace instrument: :all
 end
-
-# alert 'debug -> here I am!!!'

@@ -5,7 +5,7 @@ ruby '2.3.1' # Ruby version
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -39,9 +39,10 @@ gem 'therubyracer', platforms: :ruby
 gem 'react-router-rails', '~> 0.13.3'
 gem 'reactrb-router'
 gem 'reactive-record', '>= 0.8.0'
+#gem 'synchromesh', git: 'git@github.com:ruby-hyperloop/synchromesh.git', branch: 'authorization-policies'
 gem 'opal-browser'
 
-gem 'synchromesh', git: 'https://github.com/reactrb/synchromesh.git'
+gem 'synchromesh', git: 'https://github.com/reactrb/synchromesh.git', branch: 'authorization-policies'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #Todo: -->
@@ -61,6 +62,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'hyper-trace'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

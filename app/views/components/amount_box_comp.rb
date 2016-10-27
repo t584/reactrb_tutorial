@@ -1,7 +1,7 @@
 class AmountBoxComp < React::Component::Base
-  param :type, type: String
+  param :type,    type: String
   param :heading, type: String
-  param :amount, type: String
+  param :amount,  type: Numeric
 
   def render
     div.col_md_4 do
