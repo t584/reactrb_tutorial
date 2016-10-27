@@ -1,7 +1,7 @@
 class RecordsController < ApplicationController
   def index
     @records = Record.all
-    render_component "RecordsComp", records: @records
+    render_component 'RecordsComp', records: @records
   end
 
   def create
@@ -12,6 +12,12 @@ class RecordsController < ApplicationController
     else
       render json: @record.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @record = Record.find(params[:id])
+    @record.destroy
+    head :no_content
   end
 
   private

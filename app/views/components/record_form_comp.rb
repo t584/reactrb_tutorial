@@ -9,6 +9,14 @@ class RecordFormComp < React::Component::Base
     state.title.empty? || state.date.empty? || state.amount.empty?
   end
 
+  def save_new_record
+    record = Record.new(title: state.title, date: state.date, amount: state.amount)
+    record.save do |result|
+      alert 'unable to save' unless result
+    end
+    before_mount
+  end
+
   def render
     form.form_inline do
       div.form_group {
@@ -38,13 +46,5 @@ class RecordFormComp < React::Component::Base
                'Create record'
              end.on(:click) { save_new_record }
     end
-  end
-
-  def save_new_record
-    record = Record.new(title: state.title, date: state.date, amount: state.amount)
-    record.save do |result|
-      alert 'unable to save' unless result
-    end
-    before_mount
   end
 end
