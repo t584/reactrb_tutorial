@@ -20,4 +20,17 @@ ActiveRecord::Schema.define(version: 20161016151737) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "synchromesh_connections", force: :cascade do |t|
+    t.string   "channel"
+    t.string   "session"
+    t.datetime "created_at"
+    t.datetime "expires_at"
+    t.datetime "refresh_at"
+  end
+
+  create_table "synchromesh_queued_messages", force: :cascade do |t|
+    t.text    "data"
+    t.integer "connection_id"
+  end
+
 end
