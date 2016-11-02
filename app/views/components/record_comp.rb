@@ -7,9 +7,6 @@ class RecordComp < React::Component::Base
     state.edit! false
 
     state.record! params.record
-    state.record.date
-    state.record.title
-    state.record.amount
 
     state.date!   params.record.date
     state.title!  params.record.title
