@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/reactrb/synchromesh.git
-  revision: 2c35682770356ef05f22fe3876e8af47cd9add45
-  branch: authorization-policies
-  specs:
-    synchromesh (0.4.0)
-      activerecord (>= 0.3.0)
-      reactive-record (>= 0.7.43)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,7 +59,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
-    connection_pool (2.2.0)
+    connection_pool (2.2.1)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -76,6 +67,18 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hike (1.2.3)
+    hyper-mesh (0.5.0)
+      activerecord (>= 0.3.0)
+      hyper-react (>= 0.10.0)
+    hyper-rails (0.4.0)
+      rails (>= 4.0.0)
+    hyper-react (0.10.0)
+      opal (>= 0.8.0)
+      opal-activesupport (>= 0.2.0)
+      react-rails
+    hyper-router (2.4.0)
+      hyper-react
+      opal-browser
     hyper-trace (0.3.0)
     i18n (0.7.0)
     jbuilder (2.6.0)
@@ -103,7 +106,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    opal (0.10.2)
+    opal (0.10.3)
       hike (~> 1.2)
       sourcemap (~> 0.1.0)
       sprockets (~> 3.1)
@@ -175,20 +178,6 @@ GEM
     react-router-rails (0.13.3.2)
       rails (>= 3.1)
       react-rails (~> 1.4.0)
-    reactive-record (0.8.3)
-      opal-browser
-      opal-rails
-      rails (>= 3.2.13)
-      react-rails
-      reactrb
-    reactrb (0.9.0)
-      opal (>= 0.8.0)
-      opal-activesupport (>= 0.2.0)
-      react-rails
-    reactrb-rails-generator (0.2.0)
-      rails (>= 4.0.0)
-    reactrb-router (0.8.2)
-      reactrb
     ref (2.0.0)
     sass (3.4.22)
     sass-rails (5.0.6)
@@ -241,6 +230,9 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   coffee-rails (~> 4.2)
+  hyper-mesh
+  hyper-rails
+  hyper-router
   hyper-trace
   jbuilder (~> 2.5)
   jquery-rails
@@ -254,15 +246,10 @@ DEPENDENCIES
   react-bootstrap-rails (~> 0.13.0)
   react-rails (>= 1.3.0)
   react-router-rails (~> 0.13.3)
-  reactive-record (>= 0.8.0)
-  reactrb (~> 0.9.0)
-  reactrb-rails-generator
-  reactrb-router
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  synchromesh!
   therubyracer
   turbolinks (~> 5)
   tzinfo-data

@@ -5,20 +5,20 @@ class RecordFormComp < React::Component::Base
   before_mount :initialize_record
 
   def initialize_record
-    state.record! Record.new(title: '', date: '', amount: '')
+    state.record!({})
   end
 
   def invalid?
-    state.record.title.blank? || state.record.date.blank? || state.record.amount.blank?
+    false
   end
 
   def save_new_record(e)
     e.prevent_default
-    state.record.save do |result|
+    Record.create(state.record) do |result, message|
       if result
         initialize_record
       else
-        alert 'unable to save'
+        alert message
       end
     end
   end
@@ -29,8 +29,8 @@ class RecordFormComp < React::Component::Base
         type: type,
         placeholder: placeholder || attr.camelize,
         name: attr,
-        value: state.record.send(attr)
-      ).on(:change) { |e| state.record.send("#{attr}=", e.target.value) }
+        value: state.record[attr]
+      ).on(:change) { |e| state.record![attr] = e.target.value }
     end
   end
 

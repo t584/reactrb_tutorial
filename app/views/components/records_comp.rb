@@ -5,7 +5,7 @@ class RecordsComp < React::Component::Base
   render(:div, class: "state.credits") do
     h2.title { 'Reactable Table'}
     br
-    ReactableExample(){}
+    ReactableExample()
     br
     h2.title { 'Records' }
     div.row {

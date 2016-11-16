@@ -1,5 +1,5 @@
 # config/initializers/synchromesh.rb
-Synchromesh.configuration do |config|
+HyperMesh.configuration do |config|
   config.transport = :action_cable
   # note for security once you have a Synchromesh.configuration you
   # must at least define a basic Application Policy

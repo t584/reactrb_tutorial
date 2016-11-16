@@ -39,7 +39,8 @@ class RecordComp < React::Component::Base
   end
 
   def amount_format(amount)
-    '$ ' + amount.to_s.reverse.gsub(/...(?!-)(?=.)/,'\&,').reverse
+    "$ #{'%.02f' % amount}"
+    #'$ ' + amount.to_s.reverse.gsub(/...(?!-)(?=.)/,'\&,').reverse
   end
 
   def record_element(type, attr, default_value)
@@ -50,7 +51,7 @@ class RecordComp < React::Component::Base
   end
 
   def record_row
-    tr { td { params.record.date }
+    tr { td { params.record.date.to_s }
          td { params.record.title }
          td { amount_format(params.record.amount) }
          td { a.btn.btn_default { 'Edit' }.on(:click) { |e| handle_toggle e }
