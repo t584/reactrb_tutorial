@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require action_cable
+//= require 'webpack/client_only'
 Opal.load('components');
 //= require turbolinks
 //= require react_bootstrap

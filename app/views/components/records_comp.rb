@@ -3,6 +3,10 @@ class RecordsComp < React::Component::Base
   # moved the record computations (credit/debit/balance) to the model
 
   render(:div, class: "state.credits") do
+    h2.title { 'Reactable Table'}
+    br
+    ReactableExample(){}
+    br
     h2.title { 'Records' }
     div.row {
       AmountBoxComp(type: 'success', amount: Record.credit, heading: 'Credit')

@@ -1,0 +1,45 @@
+Arguments: 
+  /Users/ts/.nvm/versions/node/v7.1.0/bin/node /Users/ts/.nvm/versions/node/v7.1.0/bin/yarn
+
+PATH: 
+  /Users/ts/.nvm/versions/node/v7.1.0/bin:/Users/ts/.rbenv/shims:/Users/ts/.rbenv/bin:/Applications/Postgres.app/Contents/Versions/9.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  7.1.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  //= require 'components'
+  //= require 'react_ujs'
+  //
+  //= require jquery
+  //= require bootstrap-sprockets
+  //= require jquery_ujs
+  //= require action_cable
+  //= require 'webpack/client_only'
+  Opal.load('components');
+  //= require turbolinks
+  //= require react_bootstrap
+  //= require_tree .
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/ts/GoogleDrive/bronco/test_apps/reactrb_tutorial/package.json: Unexpected token / in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /Users/ts/.nvm/versions/node/v7.1.0/lib/node_modules/yarn/lib/util/fs.js:271:57
+      at Generator.next (<anonymous>)
+      at step (/Users/ts/.nvm/versions/node/v7.1.0/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:17:30)
+      at /Users/ts/.nvm/versions/node/v7.1.0/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:28:13

@@ -1,7 +1,8 @@
 # app/views/components.rb
 require 'opal'
-require 'react'
+require 'webpack/client_and_server.js'
 require 'reactrb'
+require 'reactrb/auto-import'
 require 'hyper-trace'
 if React::IsomorphicHelpers.on_opal_client?
   require 'opal-jquery'
