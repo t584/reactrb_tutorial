@@ -2,9 +2,7 @@ class Record < ApplicationRecord
   validate :valid_date, :valid_title, :valid_amount
 
   def valid_date
-    Date.parse(:date)
-  rescue
-    errors.add(:date, "is not a valid date")
+    errors.add(:date, "must be a date") unless date.is_a? Date
   end
 
   def valid_title
@@ -12,9 +10,7 @@ class Record < ApplicationRecord
   end
 
   def valid_amount
-    amount.to_f
-  rescue
-    errors.add(:amount, "must be a number")
+    errors.add(:amount, "must be a number") unless amount.is_a? Numeric
   end
 
   def self.credit
