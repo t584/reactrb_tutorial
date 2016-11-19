@@ -1073,6 +1073,10 @@ loader-utils@^0.2.11, loader-utils@^0.2.7, loader-utils@~0.2.2, loader-utils@~0.
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
+lodash:
+  version "4.17.2"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
+
 lodash._createcompounder@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._createcompounder/-/lodash._createcompounder-3.0.0.tgz#5dd2cb55372d6e70e0e2392fb2304d6631091075"
@@ -1722,6 +1726,66 @@ react@^15.3.2:
     fbjs "^0.8.4"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+
+reactabular:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular/-/reactabular-7.0.0.tgz#abc6445471ea4f05a579ecadf29690f5ee3051ff"
+  dependencies:
+    reactabular-highlight "^6.0.0"
+    reactabular-resizable "^6.0.0"
+    reactabular-resolve "^7.0.0"
+    reactabular-search "^6.1.1"
+    reactabular-search-columns "^6.0.0"
+    reactabular-search-field "^6.0.0"
+    reactabular-sort "^7.0.0"
+    reactabular-sticky "^7.0.0"
+    reactabular-table "^7.0.0"
+
+reactabular-highlight@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-highlight/-/reactabular-highlight-6.0.0.tgz#3f5726e6e00fd53c37fb2c5a53d9292f634641ed"
+
+reactabular-resizable@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-resizable/-/reactabular-resizable-6.0.0.tgz#ac88db0cd549da301b2b78c933a3fc610f3ab23c"
+
+reactabular-resolve@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-resolve/-/reactabular-resolve-7.0.0.tgz#9b3175528bb574a523757ab5fc385fe7071f0c4c"
+  dependencies:
+    reactabular-utils "^7.0.0"
+
+reactabular-search-columns@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-search-columns/-/reactabular-search-columns-6.0.0.tgz#44ce2c94d0c4752896171aee80bc39368d0bc014"
+
+reactabular-search-field@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-search-field/-/reactabular-search-field-6.0.0.tgz#9030769996e1008cbf9721c5bbada2548a3bf3b1"
+
+reactabular-search@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/reactabular-search/-/reactabular-search-6.1.1.tgz#298a8d395c37b924352cf7c54e78d4b4a63a8fbe"
+
+reactabular-sort@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-sort/-/reactabular-sort-7.0.0.tgz#2c5f7521e7744f7dfa681994969ddee855ead15f"
+  dependencies:
+    reactabular-utils "^7.0.0"
+
+reactabular-sticky@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-sticky/-/reactabular-sticky-7.0.0.tgz#06f34dfc37ef2c6084ca37f690bf78642d51a524"
+
+reactabular-table@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-table/-/reactabular-table-7.0.0.tgz#79877cd0ebae6e6d7de0bdb1adb1d8f0385c8ec0"
+  dependencies:
+    reactabular-utils "^7.0.0"
+
+reactabular-utils@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-utils/-/reactabular-utils-7.0.0.tgz#3852beed7cfc7878f5cffc41559e28320e47d1eb"
 
 readable-stream@^1.0.27-1, readable-stream@^1.1.13:
   version "1.1.14"
