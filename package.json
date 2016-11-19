@@ -10,7 +10,6 @@
     "react-bootstrap": "^0.30.6",
     "react-dom": "^15.3.2",
     "react-player": "^0.12.0",
-    "reactable": "^0.14.0",
     "webpack": "^1.13.3"
   },
   "devDependencies": {
