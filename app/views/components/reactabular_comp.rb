@@ -1,19 +1,41 @@
 class ReactabularExample < React::Component::Base
-  # before_mount do
-  #   state.records!( [
-  #                     {name: "SG-1", leader: "Oneil", assignment: "Exploration", members: 4},
-  #                     {name: "SG-2", leader: "Kawalsky", assignment: "Search and Rescue", members: 5},
-  #                     {name: "SG-3", leader: "Reynolds", assignment: "Marine Combat", members: 10},
-  #                     {name: "SG-4", leader: "Howe", assignment: "Medical", members: 4},
-  #                     {name: "SG-5", leader: "Davis", assignment: "Marine Combat", members: 6},
-  #                     {name: "SG-6", leader: "Fischer", assignment: "Search and Rescue", members: 10},
-  #                     {name: "SG-7", leader: "Isaacs", assignment: "Scientific", members: 6},
-  #                     {name: "SG-8", leader: "Yip", assignment: "Medical", members: 6},
-  #                     {name: "SG-9", leader: "Winters", assignment: "Diplomatic", members: 7},
-  #                     {name: "SG-10", leader: "Colville", assignment: "Military Exploration", members: 5} ] )
-  # end
+  before_mount do
+    state.countries!({ fi: 'Finland', dk: 'Denmark' })
+    state.rows!([ { id: 100, name: 'John', tools: 'true', country: 'fi'},
+                  { id: 101, name: 'Jack', tools: 'false', country: 'dk'} ])
+    state.columns!([ { property: 'name', header: { label: 'Name' } },
+                     { property: 'tools', header: { label: 'Tools' } },
+                     { property: 'country', header: { label: 'Country' } } ])
+  end
 
   def render
-    div('test')
+      Reactabular::Table::Provider( class: 'pure-table pure-table-striped', columns: state.columns.to_n ) {
+        Reactabular::Table::Body( rows: state.rows.to_n, row_key: :id ) }
   end
 end
+
+
+# class ReactabularExample < React::Component::Base
+#   before_mount do
+#     state.countries!({ fi: 'Finland', dk: 'Denmark' })
+#     state.rows!( [ { id: 100, name: 'John', tools: { hammer: true }, country: 'fi'},
+#                    { id: 101, name: 'Jack', tools: { hammer: false}, country: 'dk'} ] )
+#     state.col_1!( { property: 'name', header: { label: 'Name',
+#                         transforms: [ label.on(:click) { alert("clicked ${label}") } ] } } )
+#     state.col_2!( { property: 'tools', header: { label: 'Active',
+#                         transforms: [ label.on(:click) { alert("clicked ${label}") } ] },
+#                     cell: { format: (tools.hammer ? 'Hammertime' : 'nope') } } )
+#     state.col_3!( { property: 'country', header: { label: 'Country',
+#                         transforms: [ label.on(:click) { alert("clicked ${label}") } ] },
+#                     cell: { format: state.countries[country] } } )
+#     state.columns!([ state.col_1, state.col_2, state.col_3 ])
+#   end
+#
+#   def render
+#     div {
+#       # 'TEST!!!'
+#       Reactabular::Table.Provider( class: "pure-table pure-table-striped", columns: state.columns.to_n) {
+#         Reactabular::Table.Body( rows: state.rows.to_n, row_key: "id") }
+#     }
+#   end
+# end
