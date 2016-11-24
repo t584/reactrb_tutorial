@@ -1,5 +1,5 @@
 class RecordsComp < React::Component::Base
-  render(:div, class: "state.credits") do
+  render(:div, class: 'state.credits', style: { padding: '50px' }) do
     ReactabularExample()
     hr { nil }
     h2.title { 'Records' }
