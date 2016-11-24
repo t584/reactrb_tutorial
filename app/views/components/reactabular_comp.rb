@@ -3,9 +3,13 @@ class ReactabularExample < React::Component::Base
     state.countries!({ fi: 'Finland', dk: 'Denmark' })
     state.rows!([ { id: 100, name: 'John', tools: 'true', country: 'fi'},
                   { id: 101, name: 'Jack', tools: 'false', country: 'dk'} ])
-    state.columns!([ { property: 'name', header: { label: 'Name' } },
-                     { property: 'tools', header: { label: 'Tools' } },
-                     { property: 'country', header: { label: 'Country' } } ])
+    state.columns!( [ { property: 'name', header: { label: 'Name' } },
+                      { property: 'tools', header: { label: 'Tools' } },
+                      { property: 'country', header: { label: 'Country' } } ] )
+    
+    state.testcols!([ { property: 'name', header: { label: 'Name', transforms: [ label.on(:click){ alert("clicked ${label}") } ] } },
+                      { property: 'tools', header: { label: 'Tools' } },
+                      { property: 'country', header: { label: 'Country' } } ])
   end
 
   def render
