@@ -1,4 +1,4 @@
-class AmountBoxComp < React::Component::Base
+class AmountBox < React::Component::Base
   param :type,    type: String
   param :heading, type: String
   param :amount,  type: Numeric

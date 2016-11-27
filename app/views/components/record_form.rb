@@ -1,4 +1,4 @@
-class RecordFormComp < React::Component::Base
+class RecordForm < React::Component::Base
 
   define_state :record
 

@@ -1,4 +1,4 @@
-class RecordsPanelComp < React::Component::Base
+class RecordsPanel < React::Component::Base
   # moved the record computations (credit/debit/balance) to the model
 
   render do

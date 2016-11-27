@@ -1,13 +1,13 @@
 class RecordsComp < React::Component::Base
   render(:div, class: "state.credits") do
     h2.title { 'Records' }
-    AmountPanelComp()
+    AmountPanel()
     hr { nil }
-    RecordFormComp()
+    RecordForm()
     hr { nil }
-    RecordsPanelComp()
+    RecordsPanel()
     hr { nil }
-    RbTableComp()
+    # RbTableComp()
   end
   #hypertrace instrument: :all
 end
